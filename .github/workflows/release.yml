@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ssh-key: ${{ secrets.SELF_DEPLOY_KEY }}
 
@@ -18,7 +18,7 @@ jobs:
         run: echo "AZ_ICONS_CLONE_DIR=az-icons" >> ${GITHUB_ENV}
 
       - name: Get new updates from az-icons
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: az-digital/az-icons
           path: ${{ env.AZ_ICONS_CLONE_DIR }}
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Get release data
         run: |
           sha=$(git rev-parse HEAD)
