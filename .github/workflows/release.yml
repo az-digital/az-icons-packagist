@@ -13,7 +13,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_DISPATCH_TOKEN }}
-          ref: ${{ github.event.client_payload.branch }}
       - name: Build variables
         run: echo "AZ_ICONS_CLONE_DIR=az-icons" >> ${GITHUB_ENV}
       - name: Get new updates from az-icons
