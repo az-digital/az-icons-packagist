@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ssh-key: ${{ secrets.SELF_DEPLOY_KEY }}
+          token: ${{ secrets.REPO_DISPATCH_TOKEN }}
       - name: Build variables
         run: echo "AZ_ICONS_CLONE_DIR=az-icons" >> ${GITHUB_ENV}
       - name: Get new updates from az-icons
